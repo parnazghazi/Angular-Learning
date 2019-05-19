@@ -1,0 +1,12 @@
+<div class="card" *ngFor="let bill of users">
+  <img class="card-img-top" src="../../../assets/12.jpg" alt="">
+  <div class="card-body">
+    <h4 class="card-title">{{bill.name}} </h4>
+    <p class="card-text">{{bill.address.street}} - {{bill.address.suit}} - zip : {{bill.address.zipcode}}</p>
+    <p class="card-text">{{bill.age}} </p>
+    <p class="card-text">{{bill.email}} </p>
+    <p class="card-text">{{bill.phone}} </p>
+    <p class="card-text">{{bill.website}} </p>
+  </div>
+</div>  
+  
