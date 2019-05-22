@@ -1,4 +1,4 @@
-<div class="card" *ngFor="let bill of users">
+<!-- <div class="card" *ngFor="let bill of users">
   <img class="card-img-top" src="../../../assets/12.jpg" alt="">
   <div class="card-body">
     <h4 class="card-title">{{bill.name}} </h4>
@@ -9,4 +9,61 @@
     <p class="card-text">{{bill.website}} </p>
   </div>
 </div>  
-  
+   -->
+   <br/>
+   <br/>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <label for="">name</label>
+        <input type="text" class="form-control" name="name" id="name" autocomplete="off" aria-describedby="name"
+          placeholder="Enter your Name" [(ngModel)]="newUser.name">
+        <small id="name" class="form-text text-muted">You Entered : {{newUser.name}}</small>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="">Age</label>
+        <input type="text" class="form-control" name="age" id="age" autocomplete="off" aria-describedby="age"
+          placeholder="Enter your Name" [(ngModel)]="newUser.age">
+        <small id="age" class="form-text text-muted">You Entered : {{newUser.age}}</small>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="">Phone</label>
+        <input type="text" class="form-control" name="phone" id="phone" autocomplete="off" aria-describedby="phone"
+          placeholder="Enter your Name" [(ngModel)]="newUser.phone">
+        <small id="phone" class="form-text text-muted">You Entered : {{newUser.phone}}</small>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="">website</label>
+        <input type="text" class="form-control" name="website" id="website" autocomplete="off"
+          aria-describedby="website" placeholder="Enter your Name" [(ngModel)]="newUser.website">
+        <small id="website" class="form-text text-muted">You Entered : {{newUser.website}}</small>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="">email</label>
+        <input type="text" class="form-control" name="email" id="username" autocomplete="off" aria-describedby="email"
+          placeholder="Enter your Name" [(ngModel)]="newUser.email">
+        <small id="email" class="form-text text-muted">You Entered : {{newUser.email}}</small>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="">id</label>
+        <input type="text" class="form-control" name="id" id="username" autocomplete="off" aria-describedby="id"
+          placeholder="Enter your Name" [(ngModel)]="newUser.id">
+        <small id="id" class="form-text text-muted">You Entered : {{newUser.id}}</small>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="showUser()">
+Show User
+  </button>
+</div>

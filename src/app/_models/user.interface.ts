@@ -2,9 +2,9 @@ export interface User {
     id: number;
     name: string;
     age: number;
-    address: Address;
-    phone: number;
-    company: Company;
+    //address: Address;
+    phone: string;
+    //company: Company;
     email: string;
     website: string;
 }

@@ -9,18 +9,28 @@ import { User } from 'src/app/_models/user.interface';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  user = 'Parnaz';
+  user = '';
+  newUser: User = {
+    age: 0,
+    email: '',
+    id: 0,
+    name: '',
+    phone: '',
+    website: ''
+  };
   constructor(
     private service: UserService
   ) { }
 
   ngOnInit() {
-    this.getUsers();
+    // this.getUsers();
+    // this.user = prompt('esmet chichiye ? ')
   }
   getUsers() {
-    
     return this.service.getUser().subscribe(response => { this.users = response; });
 
   }
-
+  showUser() {
+    console.log(this.newUser);
+  }
 }
