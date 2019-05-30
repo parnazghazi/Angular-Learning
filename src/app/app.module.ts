@@ -6,11 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserService } from './services/user.service';
+import { CardComponent } from './components/card/card.component';
+import { PostComponent } from './components/post/post.component';
+import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    CardComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +25,7 @@ import { UserService } from './services/user.service';
   ],
   providers: [
     UserService,
+    UserDetailResolver
   ],
   bootstrap: [AppComponent]
 })
