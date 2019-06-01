@@ -18,16 +18,24 @@ export class UsersComponent implements OnInit {
   //   phone: '',
   //   website: ''
   // };
+  isLoading = false;
   constructor(
     private service: UserService
   ) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.getUsers();
     // this.user = prompt('esmet chichiye ? ')
   }
   getUsers() {
-    return this.service.getUser().subscribe(response => { this.users = response; });
+    let data = setTimeout(() => {
+      this.service.getUser().subscribe(response => { 
+        this.isLoading = false;
+        this.users = response;
+      });
+    }, 5000); 
+    return data;
 
   }
   // showUser() {

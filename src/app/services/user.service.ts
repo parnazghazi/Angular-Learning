@@ -17,8 +17,8 @@ export class UserService {
     return this.http.get(this.url + 'users');
   }
 
-  getposts(id: number): Observable<any> {
+  getposts(id): Observable<any> {
     //return this.http.get(`${this.url}/posts?userId=${id}`);
-    return this.http.get(this.url + '/posts?userId=' + id);
+    return this.http.get(this.url + 'posts?userId=' + id);
   }
 }

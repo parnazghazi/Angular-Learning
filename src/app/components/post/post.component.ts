@@ -9,7 +9,6 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
- isLoading = false;
   posts: Post[];
   constructor(
     private service: UserService,
@@ -17,15 +16,11 @@ export class PostComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  }
+    this.route.data.subscribe(res => {
 
-  getPosts() {
-    this.isLoading = true;
-    setTimeout(() => {
-      this.route.data.subscribe(data => {
-        this.isLoading = false;
-        this.posts = data['user'];
-      });
-    }, 3000);
+      this.posts = res['posts'];
+      console.log(this.posts);
+      
+    });
   }
 }
