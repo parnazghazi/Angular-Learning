@@ -30,11 +30,11 @@ export class UsersComponent implements OnInit {
   }
   getUsers() {
     let data = setTimeout(() => {
-      this.service.getUser().subscribe(response => { 
+      this.service.getUser().subscribe(response => {
         this.isLoading = false;
         this.users = response;
       });
-    }, 5000); 
+    }, 1000);
     return data;
 
   }

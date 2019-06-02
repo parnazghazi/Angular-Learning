@@ -1,12 +1,18 @@
-<div class="card" >
-    <img class="card-img-top" src="../../../assets/12.jpg" alt="">
-    <div class="card-body">
-      <h4 class="card-title">{{bill.name}} </h4>
-      <p class="card-text">{{bill.address.street}} - {{bill.address.suit}} - zip : {{bill.address.zipcode}}</p>
-      <p class="card-text">{{bill.age}} </p>
-      <p class="card-text">{{bill.email}} </p>
-      <p class="card-text">{{bill.phone}} </p>
-      <p class="card-text">{{bill.website}} </p> 
-    </div>
-    <!-- <a [routerLink]="[ '/path', routeParam ]">name</a> -->
+
+  <div class="card text-center" >
+    <img class="card-img-top img-thumbnail" src="../../../assets/12.jpg" alt="user">
+  <div class="card-body">
+    <h4 class="card-title">
+      <a href="http://{{bill.website}}">{{bill.name}}</a>
+    </h4>
+    <p class="card-text">E-Mail : {{bill.email}}</p>
+    <p class="card-text">Phone : {{bill.phone}}</p>
+
+    <p class="card-text">Address : {{bill.address.street}}, {{bill.address.suit}}, ZIP :
+      {{bill.address.zipcode}} </p>
+    <p class="card-text">Company : {{bill.company.name}}</p>
   </div>
+  <div class="card-footer">
+    <a [routerLink]="['/users/', bill.id]" class="btn btn-secondary">View Details</a>
+  </div>
+</div>

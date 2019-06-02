@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../_models/user.interface';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { Post } from '../_models/post';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +20,7 @@ export class UserService {
   }
 
   getposts(id): Observable<any> {
-    //return this.http.get(`${this.url}/posts?userId=${id}`);
+    // return this.http.get(`${this.url}/posts?userId=${id}`);
     return this.http.get(this.url + 'posts?userId=' + id);
   }
 }

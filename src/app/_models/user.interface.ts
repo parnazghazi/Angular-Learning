@@ -1,12 +1,12 @@
 export interface User {
     id: number;
     name: string;
-    age: number;
+    username: string;
+    email: string;
     address: Address;
     phone: string;
-    company: Company;
-    email: string;
     website: string;
+    company: Company;
 }
 
 export interface Address {
@@ -15,7 +15,7 @@ export interface Address {
     zipcode: number;
     geo: Geo;
 }
-export interface Geo{
+export interface Geo {
     lat: string;
     lng: string;
 }
