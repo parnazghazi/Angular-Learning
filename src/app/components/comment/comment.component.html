@@ -1,0 +1,22 @@
+
+<div *ngIf="isLoading">
+    <img src="../../../assets/fidget-spinner-loading.gif" 
+        class="img-thumbnail ${rounded-circle}" 
+        alt="loading">
+</div>
+<div *ngFor="let cmt of comments">
+    <div class="card">
+        <div class="card-body">
+            <blockquote class="blockquote">
+                <p>Title : {{cmt.name}}</p>
+                <p>Sender : {{cmt.email}}</p>
+                <footer class="card-blockquote">
+                    <cite title="Comment">{{cmt.body}}</cite>
+                </footer>
+            </blockquote>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-danger" (click)="removeComment(cmt.id)">Remove</button>
+        </div>
+    </div>
+</div>

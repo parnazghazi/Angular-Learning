@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from 'src/app/_models/post';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -8,18 +7,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  posts: Post[];
-  constructor(
-    private route: ActivatedRoute
-  ) { }
+
+  @Input() singlePost: Post;
+  @Output() deletePost = new EventEmitter<number>();
+  commentsToggle = 0;
+  constructor() { }
 
   ngOnInit() {
-    this.getUserPosts();
   }
-  getUserPosts() {
-    this.route.data.subscribe(data => {
-      this.posts = data.posts;
-      console.log(this.posts);
-    });
+
+  deletePostFn(postId) {
+    this.deletePost.emit(postId);
   }
 }

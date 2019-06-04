@@ -1,12 +1,24 @@
-
-<div class="container">
-    <div class="row col-6">
-      <div class="card card-width mt-4" *ngFor="let post of posts">
-        <!-- <img class="card-img-top img-posts" src="../../../assets/12.jpg" alt="Posts"> -->
-        <div class="card-body">
-          <h4 class="card-title">{{post.title}}</h4>
-          <p class="card-text">{{post.body}}</p> 
-        </div>
-      </div>
-    </div>
+<div class="card">
+  <div class="card-header">
+    Post Number {{singlePost.id}}
   </div>
+  <div class="card-body">
+    <h4 class="card-title">{{singlePost.title}}</h4>
+    <p class="card-text">{{singlePost.body}}</p>
+  </div>
+  <div class="card-footer text-muted">
+    <button type="button" class="btn btn-outline-danger m-2" (click)="deletePostFn(singlePost.id)" >Delete Post</button>
+    <button 
+        type="button" 
+        class="btn btn-outline-warning" 
+        [(ngModel)]="commentsToggle" 
+        btnCheckbox 
+        btnCheckboxTrue="1"
+        btnCheckboxFalse="0">
+      Show/Hide Comments
+    </button>
+  </div>
+  <div *ngIf="commentsToggle == 1">
+    <app-comment [postId]="singlePost.id"></app-comment> 
+  </div>
+</div>

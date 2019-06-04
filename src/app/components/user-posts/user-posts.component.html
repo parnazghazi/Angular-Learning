@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 m-2" *ngFor="let post of posts">
+      <app-post [singlePost]="post" (deletePost)="deleteSelectedPost($event)"></app-post>
+    </div>
+  </div>
+</div>
